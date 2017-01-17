@@ -1,0 +1,9 @@
+@import "../../pages/code/code.wxss";
+.code_imagebox{
+justify-content: center;
+align-items: center;
+}
+.code_imagebox image{
+    width: 45%;
+    padding: 2.5rem 0;
+}

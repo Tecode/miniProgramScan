@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container keyboard">
+  <view class="price_input">
+    <view class="tip">
+      <text>收款金额</text>
+    </view>
+    <view class="text-right">
+     <text class="price">￥4544.20</text>
+    </view>
+  </view>
+  <view class="button flex growp">
+    <view class="code flex">
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+      <view class="button_block">1</view>
+    </view>
+    <view class="function flex">
+      <view class="scan growp flex" bindtap="scanCode">
+        <text>扫一扫</text>
+      </view>
+      <view class="collection growp flex" bindtap="validaty">
+        <text>收款码</text>
+      </view>
+    </view>
+  </view>
+</view>

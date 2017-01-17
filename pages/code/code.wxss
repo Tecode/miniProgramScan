@@ -1,0 +1,23 @@
+.QR_code{
+    background-color: #f2f2f2;
+    align-items: center;
+}
+.QR_code image{
+    width: 100%;
+}
+.QR_code .code_imagebox{
+    padding: 1em 1.8rem .8em 1.8rem;
+    background-color: #fff;
+}
+.QR_code .price{
+    font-size: 1.8em;
+    font-weight: bold;
+    background-color: #fff;
+    padding-bottom: 1rem;
+}
+.QR_code .scan_code{
+    width: 90%;
+}
+.QR_code button{
+    margin-top: .8rem;
+}

@@ -1,0 +1,59 @@
+<view class="detail">
+    <view>
+        <text>收款金额</text>
+    </view>
+    <view>
+        <text>￥546.32</text>
+    </view>
+    <view>
+        <view class="list_item flex">
+            <view class="flex item_box">
+                <image mode="widthFix" src="../../images/home.png"></image>
+                <text>门店</text>
+            </view>
+            <text>默认门店</text>
+        </view>
+        <view class="list_item flex">
+            <view class="flex item_box">
+                <image mode="widthFix" src="../../images/data.png"></image>
+                <text>收款人</text>
+            </view>
+            <text>默认门店</text>
+        </view>
+        <view class="list_item flex">
+            <view class="flex item_box">
+                <image mode="widthFix" src="../../images/home.png"></image>
+                <text>支付描述</text>
+            </view>
+            <text>默认门店</text>
+        </view>
+        <view class="list_item flex">
+            <view class="flex item_box">
+                <image mode="widthFix" src="../../images/home.png"></image>
+                <text>交易单号</text>
+            </view>
+            <text>默认门店</text>
+        </view>
+        <view class="list_item flex">
+            <view class="flex item_box">
+                <image mode="widthFix" src="../../images/home.png"></image>
+                <text>交易时间</text>
+            </view>
+            <text>默认门店</text>
+        </view>
+        <view class="list_item flex">
+            <view class="flex item_box">
+                <image mode="widthFix" src="../../images/home.png"></image>
+                <text>订单状态</text>
+            </view>
+            <text>默认门店</text>
+        </view>
+        <view class="list_item flex">
+            <view class="flex item_box">
+                <image mode="widthFix" src="../../images/home.png"></image>
+                <text>收款方式</text>
+            </view>
+            <text>默认门店</text>
+        </view>
+    </view>
+</view>

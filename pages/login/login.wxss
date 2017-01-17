@@ -1,0 +1,49 @@
+/* pages/login/login.wxss */
+
+.login{
+    font-size: 40rpx;
+    background-color: #f3f3f3;
+    align-items: center;
+}
+.login .top{
+    margin-top: 2em;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.user_box,.psd_box{
+    display: flex;
+    padding: 30rpx 0;
+    align-items: center;
+}
+.user_box .user,.psd_box .psd{
+    margin-left: 30rpx;
+}
+.psd_box{
+    border-top: 1px solid #e7e7e7;
+}
+.login input{
+    padding-left: .5rem;
+}
+.login .icon{
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+}
+.login button{
+    background-color: #028bff;
+    border: none;
+    color: #fff;
+}
+.login .input_box{
+    width: 90%;
+}
+.login .text-right{
+    padding: 1em 0 1.5em 0;
+    color: #505050;
+}
+.login .bottom{
+    width: 100%;
+}
+.login .bottom image{
+    width: 100%;
+}

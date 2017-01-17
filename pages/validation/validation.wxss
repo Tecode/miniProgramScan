@@ -1,0 +1,34 @@
+
+.validaty button{
+    background-color: #09bb07;
+    color: #fff;
+}
+.validaty .pay_money{
+    background-color: #f4f4f4;
+    color: #505050;
+}
+.validaty .tip{
+    padding: 1.5em 0;
+}
+.validaty .price{
+    padding: 0 0 1.5em 0;
+    font-size: 50rpx;
+    font-weight: bold;
+}
+.validaty .info{
+    flex-direction: column;
+    justify-content: center;
+}
+.validaty .info_box{
+    justify-content: space-between;
+    padding: .8rem 0;
+    margin: 0 .5rem;
+}
+.validaty .check_ok button{
+    width: 90%;
+    justify-content: center;
+}
+.validaty .check_ok{
+    padding-top: 12vh;
+    background-color: #f4f4f4;
+}

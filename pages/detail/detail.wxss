@@ -1,0 +1,11 @@
+.detail .list_item image{
+    width: 60rpx;
+    height: 60rpx;
+}
+.detail .list_item{
+    justify-content: space-between;
+    align-items: center;
+}
+.detail .item_box{
+    align-items: center;
+}

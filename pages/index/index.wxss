@@ -1,0 +1,46 @@
+/**index.wxss**/
+.keyboard{
+
+}
+.keyboard .tip{
+  padding-bottom: 1.5em;
+}
+.keyboard .price_input{
+  padding: 2em .5rem 1em .5rem;
+  margin-bottom: 2rem;
+}
+.keyboard .function{
+  flex: 25%
+}
+.keyboard .code{
+  flex-wrap: wrap;
+  flex: 75%;
+  border-top: 1px solid #d7d7d7;
+}
+.keyboard .code .button_block{
+  display: flex;
+  flex: 33.33333%;
+  border-radius: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  justify-content: center;
+  align-items: center;
+}
+.price_input .price{
+  font-size: 60rpx;
+  font-weight: bold;
+}
+.keyboard .function{
+  flex-direction: column;
+}
+.keyboard .scan{
+  background-color: #27a1ff;
+  justify-content: center;
+  align-items: center;
+}
+.keyboard .collection{
+  background-color: #02a800;
+  justify-content: center;
+  align-items: center;
+}

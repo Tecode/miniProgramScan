@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/login/login", 
+    "pages/index/index",
+    "pages/validation/validation",
+    "pages/code/code",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0088ff",
+    "navigationBarTitleText": "快办商户通",
+    "navigationBarTextStyle":"#fff"
+  }
+}

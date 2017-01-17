@@ -1,0 +1,23 @@
+<view class="container validaty">
+    <view class="pay_money">
+        <view class="tip text-center">
+            <text>支付金额</text>
+        </view>
+        <view class="price text-center">
+            <text>￥6524.32</text>
+        </view>
+    </view>
+    <view class="info">
+        <view class="info_box flex">
+            <text>收款方</text>
+            <text>Lisncons</text>
+        </view>
+        <view  class="info_box flex boder_top">
+            <text>商品</text>
+            <text>的愤怒的思考富士康</text>
+        </view>
+    </view>
+    <view class="check_ok flex">
+        <button bindtap="visibleCode">立即支付</button>
+    </view>
+</view>

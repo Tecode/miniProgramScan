@@ -1,0 +1,29 @@
+/**app.wxss**/
+page {
+  height: 100%;
+}
+image{
+  display: block
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+
+} 
+.growp{
+  flex: 1
+}
+.text-right{
+  text-align: right
+}
+.text-center{
+  text-align: center;
+}
+.boder_top{
+  border-top: 1px solid #e5e5e5;
+}
+.flex{
+  display: flex;
+}

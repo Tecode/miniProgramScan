@@ -1,0 +1,14 @@
+<view class="container QR_code">
+    <view class="scan_code">
+        <view class="code_imagebox flex">
+        <image src="../../images/not_pay.png" mode="widthFix"></image>
+        </view>
+        <image mode="widthFix" src="../../images/code_bg.png"></image>
+        <view class="price text-center">
+            <text>$68.20</text>
+        </view>
+        <view class="button">
+        <button>继续收款</button>
+        </view>
+    </view>
+</view>
