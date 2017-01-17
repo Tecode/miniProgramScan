@@ -4,6 +4,8 @@
     "pages/index/index",
     "pages/validation/validation",
     "pages/code/code",
+    "pages/validatyPay/validatyPay",
+    "pages/detail/detail",
     "pages/logs/logs"
   ],
   "window":{
