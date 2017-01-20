@@ -4,7 +4,8 @@ let {globalData, request} = getApp();
 Page({
   data: {
     price: "0",
-    rdata: {}
+    rdata: {},
+    state:''
   },
   validatyAgin: function () {
     wx.showToast({
@@ -16,26 +17,19 @@ Page({
     request({
       url: globalData.apiUrl.validation,
       postdata: {
-        userName: globalData.user,
-        trade_no: (() =>{
-          if(typeof(self.data.rdata.trade_no)!="undefined"){
-            return self.data.rdata.trade_no
-          }else{
-            return self.data.rdata.tradeNum 
-          }
-        })(),
+        user: globalData.user,
+        trade_no: self.data.rdata.trade_no,
         pageindex: 0
       }, callback: ({data}) => {
         wx.hideToast();
         if (data.code == 0) {
           this.setData({
-            rdata: data.data.tradeList[0],
+            rdata: data.data.rdata[0],
           });
-          //清理缓存缓存
         } else {
           wx.showModal({
-            title: "出错了",
-            content: "验证失败",
+            title: "",
+            content: data.msg,
             showCancel: false,
             confirmText: "确定"
           })
@@ -57,8 +51,9 @@ Page({
     try {
       var value = wx.getStorageSync('cacheData')
       if (value) {
+        console.info(value)
         this.setData({
-          rdata: value,
+          rdata: value
         });
         this.validatyAgin();
       }

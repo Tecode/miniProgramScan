@@ -1,59 +1,74 @@
 <view class="detail">
-    <view>
-        <text>收款金额</text>
+  <view class="detail_bg">
+    <view class="price_tip">
+      <text>收款金额</text>
+    </view>
+    <view class="price text-center">
+      <text>￥{{info.tradeMoney}}</text>
     </view>
     <view>
-        <text>￥546.32</text>
+      <view class="list_item flex">
+        <view class="flex item_box home_icon">
+          <image mode="widthFix" src="../../images/home.png"></image>
+          <text>门店</text>
+        </view>
+        <text>{{info.tradeStore}}</text>
+      </view>
+      <view class="list_item flex">
+        <view class="flex item_box">
+          <image mode="widthFix" src="../../images/data.png"></image>
+          <text>收款人</text>
+        </view>
+        <text>{{info.tradeUser}}</text>
+      </view>
+      <view class="list_item flex">
+        <view class="flex item_box">
+          <image mode="widthFix" src="../../images/drafts.png"></image>
+          <text>支付描述</text>
+        </view>
+        <text>{{info.tradeDes}}</text>
+      </view>
+      <view class="list_item flex">
+        <view class="flex item_box">
+          <image mode="widthFix" src="../../images/dial.png"></image>
+          <text>交易单号</text>
+        </view>
+        <text>{{info.tradeNum}}</text>
+      </view>
+      <view class="list_item flex">
+        <view class="flex item_box">
+          <image mode="widthFix" src="../../images/history.png"></image>
+          <text>交易时间</text>
+        </view>
+        <text>{{info.tradeTime}}</text>
+      </view>
+      <view class="list_item flex">
+        <view class="flex item_box">
+          <image mode="widthFix" src="../../images/unfavourite.png"></image>
+          <text>订单状态</text>
+        </view>
+                <text wx:if="{{info.tradeState ==0}}">未支付</text>
+                <text wx:if="{{info.tradeState ==1}}">支付成功</text>
+                <text wx:if="{{info.tradeState ==2}}">支付失败</text>
+      </view>
+      <view class="list_item flex">
+        <view class="flex item_box">
+          <image mode="widthFix" src="../../images/money.png"></image>
+          <text>收款方式</text>
+        </view>
+                <text wx:if="{{info.tradePayWay ==0}}">收款码</text>
+                <text wx:if="{{info.tradePayWay ==1}}">扫一扫</text>
+      </view>
     </view>
-    <view>
-        <view class="list_item flex">
-            <view class="flex item_box">
-                <image mode="widthFix" src="../../images/home.png"></image>
-                <text>门店</text>
-            </view>
-            <text>默认门店</text>
-        </view>
-        <view class="list_item flex">
-            <view class="flex item_box">
-                <image mode="widthFix" src="../../images/data.png"></image>
-                <text>收款人</text>
-            </view>
-            <text>默认门店</text>
-        </view>
-        <view class="list_item flex">
-            <view class="flex item_box">
-                <image mode="widthFix" src="../../images/home.png"></image>
-                <text>支付描述</text>
-            </view>
-            <text>默认门店</text>
-        </view>
-        <view class="list_item flex">
-            <view class="flex item_box">
-                <image mode="widthFix" src="../../images/home.png"></image>
-                <text>交易单号</text>
-            </view>
-            <text>默认门店</text>
-        </view>
-        <view class="list_item flex">
-            <view class="flex item_box">
-                <image mode="widthFix" src="../../images/home.png"></image>
-                <text>交易时间</text>
-            </view>
-            <text>默认门店</text>
-        </view>
-        <view class="list_item flex">
-            <view class="flex item_box">
-                <image mode="widthFix" src="../../images/home.png"></image>
-                <text>订单状态</text>
-            </view>
-            <text>默认门店</text>
-        </view>
-        <view class="list_item flex">
-            <view class="flex item_box">
-                <image mode="widthFix" src="../../images/home.png"></image>
-                <text>收款方式</text>
-            </view>
-            <text>默认门店</text>
-        </view>
+  </view>
+  <view class="image_code">
+    <image mode="widthFix" src="../../images/code_bg.png"></image>
+    <view class="code">
+      <image mode="widthFix" src="{{info.tradeCode}}"></image>
     </view>
+    {{info.tradeCode}}
+    <view class="description text-center">
+    <text>收款二维码</text>
+    </view>
+  </view>
 </view>

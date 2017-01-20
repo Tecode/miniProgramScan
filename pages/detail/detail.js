@@ -1,8 +1,21 @@
 // pages/detail/detail.js
+
 Page({
-  data:{},
+  data:{
+    info:{}
+  },
   onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+    try {
+      const data = wx.getStorageSync('cacheData');
+      if (data) {
+        this.setData({
+          info: data,
+        });
+        // Do something with return value
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
   },
   onReady:function(){
     // 页面渲染完成

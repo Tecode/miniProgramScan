@@ -5,31 +5,33 @@
       <text>收款金额</text>
     </view>
     <view class="text-right">
-     <text class="price">￥4544.20</text>
+     <text class="price">￥{{total}}</text>
     </view>
   </view>
   <view class="button flex growp">
-    <view class="code flex">
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-      <view class="button_block">1</view>
-    </view>
-    <view class="function flex">
-      <view class="scan growp flex" bindtap="scanCode">
-        <text>扫一扫</text>
-      </view>
-      <view class="collection growp flex" bindtap="validaty">
-        <text>收款码</text>
-      </view>
-    </view>
+        <view class="code flex">
+        <block wx:for="{{numbers}}" wx:key="*this">
+          <view class="button_block"  data-num="{{item}}" bindtap="keyDown">{{item}}</view>
+        </block>
+          <view class="button_block"   bindtap="deletNumber">删除</view>
+        </view>
+          <view class="function flex">
+            <view class="scan growp flex" bindtap="scanCode">
+              <text>扫一扫</text>
+            </view>
+            <view class="collection growp flex" bindtap="validaty">
+              <text>收款码</text>
+            </view>
+          </view>
   </view>
+        <view class="nav flex">
+        <view class="flex navigator" hover-class="navigator-hover">
+          <image class="code" mode="widthFix" src="../../images/code_color.png"></image>
+          <text class="check_blue">微信收款</text>
+        </view>
+        <navigator class="flex" url="../../pages/infoList/infoList" hover-class="navigator-hover">
+          <image class="list" mode="widthFix" src="../../images/lisy_gary.png"></image>
+          <text>交易流水</text>
+          </navigator>
+      </view>
 </view>

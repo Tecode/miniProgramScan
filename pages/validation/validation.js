@@ -1,7 +1,9 @@
 
+let {globalData} = getApp();
+
 Page({
   data: {
-    button: 'Hello World',
+    price: globalData.price,
   },
   visibleCode:() => {
       wx.navigateTo({

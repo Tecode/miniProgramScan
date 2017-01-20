@@ -1,0 +1,50 @@
+<view class="container information">
+  <!--<view class="tab flex text-center">
+    <view class="button">交易状态</view>
+    <view class="button">交易时间</view>
+    <view class="button">时间段</view>
+  </view>-->
+  <view class="flex info_list_box">
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadMore">
+  <view class="info_box">
+      <block wx:for="{{listData}}" wx:key="id">
+        <view class="info_item flex" data-data="{{item}}">
+          <view wx:if="{{item.tradeState ==0}}" class="color org"></view>
+          <view wx:if="{{item.tradeState ==2}}" class="color red"></view>
+          <view wx:if="{{item.tradeState ==1}}" class="color gre"></view>
+          <view class="right_box flex" data-data="{{item}}" catchtap="infoDetail">
+            <view class="order" data-data="{{item}}" catchtap="infoDetail">
+              <view data-data="{{item}}" catchtap="infoDetail">
+                {{item.tradeNum}}
+              </view>
+              <view data-data="{{item}}" catchtap="infoDetail">
+                {{item.tradeTime}}
+              </view>
+            </view>
+            <view class="status">
+              <view class="text-right">
+                <text wx:if="{{item.tradeState ==0}}">未支付</text>
+                <text wx:if="{{item.tradeState ==1}}">支付成功</text>
+                <text wx:if="{{item.tradeState ==2}}">支付失败</text>
+              </view>
+              <view class="text-right">
+                ￥{{item.tradeMoney}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+  </view>
+    </scroll-view>
+  </view>
+  <view class="nav flex">
+    <view class="flex navigator" bindtap="goBack">
+      <image class="code" mode="widthFix" src="../../images/code_gary.png"></image>
+      <text>微信收款</text>
+    </view>
+    <view url="" class="flex navigator" hover-class="navigator-hover">
+      <image class="list" mode="widthFix" src="../../images/lisy_color.png"></image>
+      <text class="check_blue">交易流水</text>
+    </view>
+  </view>
+</view>

@@ -1,6 +1,6 @@
 /**index.wxss**/
 .keyboard{
-
+  background-color: #fff;
 }
 .keyboard .tip{
   padding-bottom: 1.5em;
@@ -10,7 +10,9 @@
   margin-bottom: 2rem;
 }
 .keyboard .function{
-  flex: 25%
+  flex: 25%;
+  font-weight: bold;
+  color: #fff;
 }
 .keyboard .code{
   flex-wrap: wrap;
@@ -26,6 +28,10 @@
   border-right: 1px solid #e7e7e7;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
+}
+.keyboard .code .button_block:active{
+  background-color: rgba(0, 0, 0, .1);
 }
 .price_input .price{
   font-size: 60rpx;
@@ -43,4 +49,18 @@
   background-color: #02a800;
   justify-content: center;
   align-items: center;
+}
+.keyboard navigator,.keyboard .navigator{
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: .5rem 0;
+}
+.keyboard .navigator .code{
+ width: 60rpx;
+ padding-bottom: .3rem;
+}
+.keyboard navigator .list{
+ width: 45rpx;
+ padding-bottom: .3rem;
 }

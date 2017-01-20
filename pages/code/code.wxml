@@ -1,15 +1,15 @@
 <view class="container QR_code">
     <view class="scan_code">
         <view class="code_imagebox">
-        <image src="../../images/QR_code.jpg" mode="widthFix"></image>
+        <image src="{{codeUrl}}" mode="widthFix"></image>
         </view>
         <image mode="widthFix" src="../../images/code_bg.png"></image>
         <view class="price text-center">
-            <text>$68.20</text>
+            <text>￥{{price}}</text>
         </view>
         <view class="button">
-        <button>验证支付</button>
-        <button>继续收款</button>
+        <button bindtap="validation">验证支付</button>
+        <button bindtap="backToPay">继续收款</button>
         </view>
     </view>
 </view>

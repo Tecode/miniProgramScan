@@ -2,16 +2,16 @@
     <view class="scan_code">
         <view class="code_imagebox flex">
         
-        <image wx:if="{{rdata.tradeState ==0}}" src="../../images/not_pay.png" mode="widthFix"></image>
-        <image wx:if="{{rdata.tradeState ==2}}" src="../../images/fail.png" mode="widthFix"></image>
-        <image wx:if="{{rdata.tradeState ==1}}" src="../../images/pay_sucsess.png" mode="widthFix"></image>
+        <image wx:if="{{state ==0}}" src="../../images/not_pay.png" mode="widthFix"></image>
+        <image wx:if="{{state ==2}}" src="../../images/fail.png" mode="widthFix"></image>
+        <image wx:if="{{state ==1}}" src="../../images/pay_sucsess.png" mode="widthFix"></image>
         </view>
         <image mode="widthFix" src="../../images/code_bg.png"></image>
         <view class="price text-center">
             <text>￥{{price}}</text>
         </view>
         <view class="button">
-        <button bindtap="validatyAgin" wx:if="{{rdata.tradeState !=1}}">再次验证</button>
+        <button bindtap="validatyAgin" wx:if="{{rdata[0].paystate !=1}}">再次验证</button>
         <button bindtap="backToPay">继续收款</button>
         </view>
     </view>

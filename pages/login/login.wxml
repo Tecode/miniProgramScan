@@ -4,11 +4,11 @@
         <form>
             <view class="user_box">
                 <image mode="aspectFit" src="../../images/user.png" class="user icon"></image>
-                <input type="text" placeholder="账号"/>
+                <input bindinput="bindUserName" value="{{userName}}" type="text" placeholder="账号"/>
             </view>
             <view class="psd_box">
                 <image mode="aspectFit" class="psd icon" src="../../images/lock.png"></image>
-                <input type="password" placeholder="密码"/>
+                <input bindinput="bindPassWord" type="password" value="{{passWord}}" placeholder="密码"/>
             </view>
         </form>
     </view>
@@ -16,7 +16,7 @@
         <view class="text-right">
             <text>忘记密码</text>
         </view>
-        <button bindtap="bindViewTap">登录</button>
+        <button bindtap="bindSubmit">绑定</button>
     </view>
     </view>
     <view class="growp"></view>
@@ -24,3 +24,5 @@
         <image mode="aspectFill" src="../../images/loginBack.png"></image>
     </view>
 </view>
+
+  <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>

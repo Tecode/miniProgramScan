@@ -10,6 +10,9 @@
     background-color: #fff;
     border-radius: 5px;
 }
+.login .top input{
+    color: #505050;
+}
 .user_box,.psd_box{
     display: flex;
     padding: 30rpx 0;
@@ -46,4 +49,7 @@
 }
 .login .bottom image{
     width: 100%;
+}
+.login button:active{
+    background-color: #18629b;
 }

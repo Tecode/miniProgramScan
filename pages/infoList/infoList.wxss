@@ -1,0 +1,64 @@
+
+.information{
+    background-color: #f3f3f3;
+}
+.information .info_item{
+    font-size: .8rem;
+    line-height: 1.5rem;
+    margin: .8rem .5rem 0 .5rem;
+}
+.information .tab .button{
+    flex: 1;
+    padding: .8rem 0;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-right: 1px solid #f3f3f3;
+}
+.information .right_box{
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 .5rem;
+}
+.information .color{
+    width: .8rem;
+    height: 2.2rem;
+    padding: 1rem 0;
+}
+.information .red{
+    background-color: #fe6060;
+}
+.information .org{
+    background-color: #ff9c00;
+}
+.information .gre{
+    background-color: #00be79;
+}
+.information .nav{
+    background-color: #fff;
+    border-top: 1px solid #f3f3f3;
+}
+.information .nav .navigator{
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: .5rem 0;
+}
+.information .info_list_box{
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+}
+.information .navigator .code{
+ width: 60rpx;
+ padding-bottom: .3rem;
+ flex: 75%;
+}
+.information .navigator .list{
+ width: 45rpx;
+ padding-bottom: .3rem;
+}
+.information .info_box{
+    height: auto;
+}

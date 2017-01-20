@@ -18,6 +18,7 @@
 .validaty .info{
     flex-direction: column;
     justify-content: center;
+    background-color: #fff;
 }
 .validaty .info_box{
     justify-content: space-between;

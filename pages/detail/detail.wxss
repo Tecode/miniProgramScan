@@ -1,11 +1,53 @@
-.detail .list_item image{
-    width: 60rpx;
-    height: 60rpx;
+.detail{
+    background-color: #f0f0f0;
 }
-.detail .list_item{
-    justify-content: space-between;
-    align-items: center;
+.detail_bg{
+    background-color: #fff;
+    margin: 0 .8rem;
 }
-.detail .item_box{
-    align-items: center;
+.detail .image_code{
+    margin: 0 .8rem;
+}
+.detail .image_code image{
+    width: 100%;
+}
+.detail .list_item image {
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: .5rem;
+}
+.detail .price{
+    font-size: 80rpx;
+    font-weight: bold;
+    padding: 1rem 0;
+}
+.detail .price_tip{
+    padding: 1.2rem 0 0 .5rem;
+}
+.image_code .code{
+ padding: .5rem 2rem 1rem 2rem;
+ background-color: #fff;
+}
+
+.detail .description{
+    background-color: #fff;
+    padding-bottom: 2rem;
+}
+
+.detail .list_item {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #f3f3f3;
+  margin: 0 .8rem;
+  font-size: .8rem;
+}
+
+.detail .item_box {
+  align-items: center;
+}
+
+.detail .home_icon image{
+  width: 50rpx;
+  height: 50rpx;
 }
