@@ -66,7 +66,6 @@
     <view class="code">
       <image mode="widthFix" src="{{info.tradeCode}}"></image>
     </view>
-    {{info.tradeCode}}
     <view class="description text-center">
     <text>收款二维码</text>
     </view>

@@ -19,18 +19,19 @@ Page({
     } else {
       wx.scanCode({
         success: (res) => {
-
-          if (res.errMsg == "scanCode:ok") {
             wx.showToast({
               title: "微信支付",
               icon: "loading",
               duration: 5000
             })
+          if (res.errMsg == "scanCode:ok") {
+            console.info(11111111111);
+            console.info(res);
             request({
               url: globalData.apiUrl.scanApp,
               postdata: {
                 goodsDes: "小程序扫码",
-                authCode: res.result,
+                authCode: res.result.replace("http://",""),
                 goodsPrice: total * 100,
                 userName: globalData.user,
               }, callback: ({data}) => {
