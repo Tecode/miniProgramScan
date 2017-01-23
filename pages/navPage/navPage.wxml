@@ -1,0 +1,9 @@
+<view class="container navpage">
+  <view class="img flex">
+    <image mode="scaleToFill" mode="widthFix" src="../../images/login_img.png"></image>
+  </view>
+  <view class="growp"></view>
+  <view class="text flex">
+    <image mode="scaleToFill" mode="widthFix" src="../../images/login_text.png"></image>
+  </view>
+</view>

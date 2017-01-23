@@ -63,19 +63,10 @@ App({
     try {
       const data = wx.getStorageSync('cacheData');
       if (data) {
-        console.info(data)
         // Do something with return value
       }
     } catch (e) {
       // Do something when catch error
     }
-
-    this.getUserOpenId(({data}) => {
-      if (data.code == 0) {
-        wx.redirectTo({
-          url: '/pages/index/index'
-        })
-      }
-    });
   },
 })

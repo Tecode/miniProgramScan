@@ -14,7 +14,7 @@
     </view>
     <view>
         <view class="text-right">
-            <text>忘记密码</text>
+            <!--<text>忘记密码</text>-->
         </view>
         <button bindtap="bindSubmit">绑定</button>
     </view>
