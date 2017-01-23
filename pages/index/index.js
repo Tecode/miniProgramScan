@@ -19,11 +19,11 @@ Page({
     } else {
       wx.scanCode({
         success: (res) => {
-            wx.showToast({
-              title: "微信支付",
-              icon: "loading",
-              duration: 5000
-            })
+          wx.showToast({
+            title: "微信支付",
+            icon: "loading",
+            duration: 5000
+          })
           if (res.errMsg == "scanCode:ok") {
             console.info(11111111111);
             console.info(res);
@@ -31,7 +31,7 @@ Page({
               url: globalData.apiUrl.scanApp,
               postdata: {
                 goodsDes: "小程序扫码",
-                authCode: res.result.replace("http://",""),
+                authCode: res.result.replace("http://", ""),
                 goodsPrice: total * 100,
                 userName: globalData.user,
               }, callback: ({data}) => {
@@ -142,5 +142,45 @@ Page({
         },
       });
     }
+  },
+  // 退出登录
+  loginOut: function () {
+    wx.showModal({
+      content: "点击确定按钮会解除绑定并回到登录页面",
+      confirmText: "确定",
+      cancelText: "取消",
+      success: function (res) {
+        if (res.confirm) {
+          wx.showToast({
+            title: "正在退出",
+            icon: "loading",
+            duration: 5000
+          })
+          request({
+            url: globalData.apiUrl.loginOut,
+            postdata: {
+              openid: globalData.openid,
+            }, callback: ({data}) => {
+              wx.hideToast();
+              if (data.code == 0) {
+                wx.redirectTo({
+                  url: '../login/login'
+                });
+              } else {
+                wx.showModal({
+                  title: "",
+                  content: data.msg,
+                  showCancel: false,
+                  confirmText: "确定"
+                })
+              }
+            }, header: {
+              'Authorization': globalData.Authorization
+            },
+          });
+        }
+      }
+    })
+
   }
 })

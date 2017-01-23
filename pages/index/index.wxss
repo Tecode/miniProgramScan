@@ -64,3 +64,16 @@
  width: 45rpx;
  padding-bottom: .3rem;
 }
+.keyboard .login_out{
+  justify-content: center;
+  align-items: center;
+}
+.keyboard .login_out_btn{
+  padding: .5rem .6rem .5rem .6rem;
+  background-color: #0088ff;
+  color: #fff;
+  border-radius: 999px;
+}
+.keyboard .login_out_btn:active{
+  background-color: #27a1ff;
+}

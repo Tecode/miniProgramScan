@@ -29,6 +29,9 @@
           <image class="code" mode="widthFix" src="../../images/code_color.png"></image>
           <text class="check_blue">微信收款</text>
         </view>
+        <!--<view class="navigator flex login_out">
+          <view class="login_out_btn" bindtap="loginOut">退出</view>
+        </view>-->
         <navigator class="flex" url="../../pages/infoList/infoList" hover-class="navigator-hover">
           <image class="list" mode="widthFix" src="../../images/lisy_gary.png"></image>
           <text>交易流水</text>

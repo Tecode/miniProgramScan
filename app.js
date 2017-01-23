@@ -7,7 +7,8 @@ App({
       scanApp: "https://pay.51byod.cn/webapi/apiapp/payswxApi",//扫一扫
       scanQRcode: "https://pay.51byod.cn/webapi/apiapp/payswxapi?code=pays",//二维码
       validation: "https://pay.51byod.cn/webapi/apiapp/paywxrecordapi?tradeno=no",//验证支付状态
-      listInfo: "https://pay.51byod.cn/webapi/apiapp/paywxrecordapi"//获取交易流水
+      listInfo: "https://pay.51byod.cn/webapi/apiapp/paywxrecordapi",//获取交易流水
+      loginOut:"https://pay.51byod.cn/webapi/apiapp/paywxrecordapi"//退出登录
     },
     hasLogin: false,
     openid: null,
