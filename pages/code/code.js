@@ -14,7 +14,6 @@ Page({
     try {
       var value = wx.getStorageSync('scanCodeData')
       if (value) {
-        console.info(value);
         this.setData({
           codeUrl: value.codeurl,
           trade_no: value.trade_no

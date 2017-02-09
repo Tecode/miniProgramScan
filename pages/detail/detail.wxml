@@ -56,18 +56,18 @@
           <image mode="widthFix" src="../../images/money.png"></image>
           <text>收款方式</text>
         </view>
-                <text wx:if="{{info.tradePayWay ==0}}">收款码</text>
-                <text wx:if="{{info.tradePayWay ==1}}">扫一扫</text>
+                <text wx:if="{{info.tradePayWay ==1}}">收款码</text>
+                <text wx:if="{{info.tradePayWay ==0}}">扫一扫</text>
       </view>
     </view>
   </view>
   <view class="image_code">
     <image mode="widthFix" src="../../images/code_bg.png"></image>
     <view class="code">
-      <image mode="widthFix" src="{{info.tradeCode}}"></image>
+      <image wx:if="{{info.tradePayWay ==1}}" mode="widthFix" src="{{info.tradeCode}}"></image>
     </view>
     <view class="description text-center">
-    <text>收款二维码</text>
+    <text wx:if="{{info.tradePayWay ==1}}">收款二维码</text>
     </view>
   </view>
 </view>

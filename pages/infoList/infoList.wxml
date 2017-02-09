@@ -1,10 +1,56 @@
 <view class="container information">
-  <!--<view class="tab flex text-center">
-    <view class="button">交易状态</view>
-    <view class="button">交易时间</view>
-    <view class="button">时间段</view>
-  </view>-->
-  <view class="flex info_list_box">
+<!--遮罩-->
+  <view hidden="{{mask}}" class="mask" bindtap="hiddenMask"></view>
+  <view class="tab flex text-center">
+    <view class="button ul_list">
+      <view bindtap="payStateControl" class="padding_tb08">交易状态</view>
+      <view class="choice_box flex" hidden="{{payState}}">
+        <text data-state="" bindtap="choiceState" class="button_text">全部支付</text>
+        <text data-state="1" bindtap="choiceState" class="button_text">未支付</text>
+        <text data-state="2" bindtap="choiceState" class="button_text">支付失败</text>
+        <text data-state="3" bindtap="choiceState" class="button_text">支付成功</text>
+      </view>
+    </view>
+    <view class="button ul_list">
+      <view bindtap="payTimeControl" class="padding_tb08">交易时间</view>
+      <view class="choice_box flex text-center" hidden="{{payTime}}">
+        <text data-month="1" bindtap="choiceMonth" class="button_text">近1个月</text>
+        <text data-month="2" bindtap="choiceMonth" class="button_text">近2个月</text>
+        <text data-month="3" bindtap="choiceMonth" class="button_text">近3个月</text>
+        <text data-month="4" bindtap="choiceMonth" class="button_text">近4个月</text>
+      </view>
+    </view>
+    <view class="button">
+    <view data-value="choice" bindtap="timePeriod" class="padding_tb08">时间段</view>
+      <view class="choice_box flex choice_timeBox" hidden="{{timeShow}}">
+        <view class="small_text">
+          <text>设置时间段</text>
+          <view class="choice_time flex">
+            <picker mode="date" value="{{startTime}}" start="2000-01-01" end="{{endTime}}" bindchange="bindDateStart">
+              <view class="picker">
+                <text class="time_box">{{startTime}}</text>
+              </view>
+            </picker>
+               <text>至 </text>
+            <picker mode="date" value="{{endTime}}" start="{{startTime}}" end="2090-01-01" bindchange="bindDateEnd">
+              <view class="picker">
+                <text class="time_box">{{endTime}}</text>
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class="flex">
+          <view data-value="cancel" bindtap="timePeriod" class="growp bottom_btn btn-cancel">取消</view>
+          <view data-value="isOK" bindtap="timePeriod" class="growp bottom_btn btn-primery">确定</view>
+        </view>
+      </view>
+    </view>
+  </view>
+      <view class="text-center no_infoBox growp flex" wx:if="{{listData.length == 0}}">
+      <image class="no_info_image" src="../../images/skull.png" mode="widthFix"></image>
+      <text class="no_info">还没有记录哦！</text>
+    </view>
+  <view class="flex info_list_box" wx:if="{{listData.length != 0}}">
 <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadMore">
   <view class="info_box">
       <block wx:for="{{listData}}" wx:key="id">

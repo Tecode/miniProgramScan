@@ -1,5 +1,5 @@
 
-let {getUserOpenId, globalData, request} = getApp();
+let {getUserOpenId, globalData, request,bind} = getApp();
 
 Page({
   data: {
@@ -38,28 +38,7 @@ Page({
         icon: "loading",
         duration: 10000
       })
-      request({
-        url: globalData.apiUrl.bindApp,
-        postdata: {
-          userName: this.data.userName,
-          passWord: this.data.passWord,
-          openid: globalData.openid,
-        }, callback: ({data}) => {
-          wx.hideToast();
-          if (data.code == -1) {
-            wx.showModal({
-              title: "出错啦！",
-              content: data.msg,
-              showCancel: false,
-              confirmText: "确定"
-            })
-          } else if (data.code == 0) {
-            wx.redirectTo({
-              url: '../index/index'
-            })
-          }
-        }
-      });
+    bind({userName:this.data.userName,passWord:this.data.passWord});
     }
   },
   confirm: function () {

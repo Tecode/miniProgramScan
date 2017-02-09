@@ -6,7 +6,7 @@
   padding-bottom: 1.5em;
 }
 .keyboard .price_input{
-  padding: 2em .5rem 1em .5rem;
+  padding: 1em .5rem .5em .5rem;
   margin-bottom: 2rem;
 }
 .keyboard .function{
@@ -76,4 +76,21 @@
 }
 .keyboard .login_out_btn:active{
   background-color: #27a1ff;
+}
+.keyboard .total_info{
+  background-color: #f6f6f6;
+  padding: .5rem 0;
+}
+.keyboard .vertical{
+  flex-direction: column;
+  text-align: center;
+  padding: .6rem;
+}
+.keyboard .large{
+  font-size: 1.8rem;
+  color: #929292;
+}
+.keyboard .middle{
+  font-size: 1rem;
+  color: #929292;
 }

@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 let {globalData, request} = getApp();
+// console.info(globalData.user)
 Page({
   data: {
     numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, ".", 0],
@@ -14,7 +15,8 @@ Page({
         title: "",
         content: "请输入大于0的数字",
         showCancel: false,
-        confirmText: "确定"
+        confirmText: "确定",
+        confirmColor: '#028bff'
       })
     } else {
       wx.scanCode({
@@ -25,8 +27,6 @@ Page({
             duration: 5000
           })
           if (res.errMsg == "scanCode:ok") {
-            console.info(11111111111);
-            console.info(res);
             request({
               url: globalData.apiUrl.scanApp,
               postdata: {
@@ -50,7 +50,8 @@ Page({
                     title: "出错啦",
                     content: "获取数据失败",
                     showCancel: false,
-                    confirmText: "确定"
+                    confirmText: "确定",
+                    confirmColor: '#028bff'
                   })
                 }
               }, header: {
@@ -104,7 +105,8 @@ Page({
         title: "",
         content: "请输入大于0的数字",
         showCancel: false,
-        confirmText: "确定"
+        confirmText: "确定",
+        confirmColor: '#028bff'
       })
     } else {
       wx.showToast({
@@ -134,7 +136,8 @@ Page({
               title: "",
               content: data.msg,
               showCancel: false,
-              confirmText: "确定"
+              confirmText: "确定",
+              confirmColor: '#028bff'
             })
           }
         }, header: {
@@ -146,9 +149,10 @@ Page({
   // 退出登录
   loginOut: function () {
     wx.showModal({
-      content: "点击确定按钮会解除绑定并回到登录页面",
+      content: "确定要退出吗?",
       confirmText: "确定",
       cancelText: "取消",
+      confirmColor: '#028bff',
       success: function (res) {
         if (res.confirm) {
           wx.showToast({
@@ -162,7 +166,7 @@ Page({
               openid: globalData.openid,
             }, callback: ({data}) => {
               wx.hideToast();
-              if (data.code == 0) {
+              if (data.code == 0 || data.code == -1) {
                 wx.redirectTo({
                   url: '../login/login'
                 });
@@ -171,7 +175,8 @@ Page({
                   title: "",
                   content: data.msg,
                   showCancel: false,
-                  confirmText: "确定"
+                  confirmText: "确定",
+                  confirmColor: '#028bff'
                 })
               }
             }, header: {

@@ -4,17 +4,17 @@ Page({
   data:{},
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    getUserOpenId(({data}) => {
-      if (data.code == 0) {
-        wx.redirectTo({
-          url: '/pages/index/index'
-        })
-      }else{
-        wx.redirectTo({
-          url: '/pages/login/login'
-        })
-      }
-    });
+    // getUserOpenId(({data}) => {
+    //   if (data.code == 0) {
+    //     wx.redirectTo({
+    //       url: '/pages/index/index'
+    //     })
+    //   }else{
+    //     wx.redirectTo({
+    //       url: '/pages/login/login'
+    //     })
+    //   }
+    // });
   },
   onReady:function(){
     // 页面渲染完成

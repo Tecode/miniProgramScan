@@ -9,7 +9,6 @@
 }
 .information .tab .button{
     flex: 1;
-    padding: .8rem 0;
     background-color: #fff;
     box-sizing: border-box;
     border-right: 1px solid #f3f3f3;
@@ -61,4 +60,76 @@
 }
 .information .info_box{
     height: auto;
+}
+.information .no_infoBox{
+    height: 100%;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+}
+.information .no_info{
+    padding-top: 1em;
+}
+.information .no_info_image{
+    width: 60%;
+}
+.information .ul_list{
+    position: relative;
+}
+.information .choice_box{
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 2.8rem;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+.information .button_text{
+    border-top: 1px solid #fafafa;
+    padding: .4rem 0;
+    font-size: .9rem;
+}
+.information .button_text:active{
+    background-color: #f1f1f1;
+}
+.information .bottom_btn{
+    margin-top: .6rem;
+    padding: .5rem 0;
+}
+.information .time_box{
+    border: 1px solid #fafafa;
+    padding:.2rem .8rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+.information .choice_time{
+    margin: 1rem 0;
+    justify-content: center;
+}
+.information .small_text{
+    padding-top: .4rem;
+    font-size: .8rem;
+}
+.information .choice_timeBox{
+    border-top: 1px solid #fafafa;
+}
+.information .btn-primery{
+    background-color: #27a1ff;
+    color: #fff;
+}
+.information .btn-cancel{
+    background-color: #dedede;
+}
+.padding_tb08{
+    padding: .8rem 0;
+}
+
+.mask{
+  position: fixed;
+  top: 2.8rem;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, .2)
 }

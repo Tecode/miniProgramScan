@@ -8,14 +8,14 @@ App({
       scanQRcode: "https://pay.51byod.cn/webapi/apiapp/payswxapi?code=pays",//二维码
       validation: "https://pay.51byod.cn/webapi/apiapp/paywxrecordapi?tradeno=no",//验证支付状态
       listInfo: "https://pay.51byod.cn/webapi/apiapp/paywxrecordapi",//获取交易流水
-      loginOut:"https://pay.51byod.cn/webapi/apiapp/paywxrecordapi"//退出登录
+      loginOut: "https://pay.51byod.cn/webapi/apiapp/weapppaysapi?value1=10&value2=09"//退出登录
     },
     hasLogin: false,
     openid: null,
     user: "",
     Authorization: ""
   },
-  request: function ({url, postdata, callback,header}) {
+  request: function ({url, postdata, callback, header}) {
     let self = this;
     wx.request({
       url: url,
@@ -25,7 +25,7 @@ App({
         callback.call(this, res);
         console.info(res);
       },
-      header:header,
+      header: header,
       fail: function (res) {
         callback.call(this, res);
         console.log('拉取失败，将无法正常使用开放接口等服务', res)
@@ -34,31 +34,53 @@ App({
   },
   getUserOpenId: function (fn) {
     let self = this;
-    if (self.globalData.openid) {
-      fn(null, self.globalData.openid)
-    } else {
-      wx.login({
-        success: function (data) {
-          console.info(data.code)
-          self.request({
-            url: self.globalData.apiUrl.appApi,//获取数据
-            postdata: { code: data.code },
-            callback: (res) => {
+    wx.login({
+      success: function (data) {
+        self.request({
+          url: self.globalData.apiUrl.appApi,//获取数据
+          postdata: { code: data.code },
+          callback: (res) => {
+            if (res.data.code == 0) {
               console.log('拉取openid成功', res);
               self.globalData.user = res.data.data.user;
               self.globalData.Authorization = res.data.data.uAuthorization;
-              fn(res);
-              self.globalData.openid = res.data.data.userOpenid;
             }
-          });
-
-        },
-        fail: function (err) {
-          console.log('wx.login 接口调用失败，将无法正常使用开放接口等服务', err)
-          fn(err)
+            self.globalData.openid = res.data.data.userOpenid;
+            fn(res);
+          }
+        });
+      },
+      fail: function (err) {
+        console.log('wx.login 接口调用失败，将无法正常使用开放接口等服务', err)
+        fn(err)
+      }
+    })
+  },
+  bind: function ({userName,passWord}) {
+      this.request({
+        url: this.globalData.apiUrl.bindApp,
+        postdata: {
+          userName: userName,
+          passWord: passWord,
+          openid:this.globalData.openid,
+        }, callback: ({data}) => {
+          wx.hideToast();
+          if (data.code !=0) {
+            wx.showModal({
+              content: data.msg,
+              showCancel: false,
+              confirmText: "确定",
+              confirmColor:'#028bff'
+            })
+          } else if (data.code == 0) {
+              this.globalData.user = data.data.user;
+              this.globalData.Authorization = data.data.uAuthorization;
+            wx.redirectTo({
+              url: '../index/index'
+            })
+          }
         }
-      })
-    }
+      });
   },
   onLaunch: function () {
     try {
@@ -68,6 +90,32 @@ App({
       }
     } catch (e) {
       // Do something when catch error
-    }
+    };
+
+    this.getUserOpenId(({data}) => {
+      if (data.code == 0) {
+        wx.redirectTo({
+          url: '/pages/index/index'
+        })
+      } else {
+        wx.redirectTo({
+          url: '/pages/login/login'
+        })
+      }
+    });
   },
+  onShow: function () {
+    // 页面初始化 options为页面跳转所带来的参数
+    // this.getUserOpenId(({data}) => {
+    //   if (data.code == 0) {
+    //     wx.redirectTo({
+    //       url: '/pages/index/index'
+    //     })
+    //   } else {
+    //     wx.redirectTo({
+    //       url: '/pages/login/login'
+    //     })
+    //   }
+    // });
+  }
 })
